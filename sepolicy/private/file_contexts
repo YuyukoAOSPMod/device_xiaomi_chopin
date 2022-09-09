@@ -8,6 +8,9 @@
 # VoLTE
 /system/bin/vtservice           u:object_r:vtservice_exec:s0
 
+# Vibrator
+/(product|system/product)/vendor_overlay/[0-9]+/bin/hw/vendor\.xiaomi\.hardware\.vibratorfeature\.service u:object_r:hal_vibrator_default_exec:s0
+
 # Xiaomi touch
 /system/bin/xiaomi-touch   u:object_r:xiaomi_touch_exec:s0
 /dev/xiaomi-touch          u:object_r:touchfeature_device:s0
