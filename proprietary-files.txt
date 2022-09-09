@@ -64,6 +64,12 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service:product/vendor_overlay/31/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml:product/vendor_overlay/31/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
 
+# Duraspeed
+etc/init/duraspeed.rc
+-framework/duraspeed.jar
+system_ext/priv-app/DuraSpeed/DuraSpeed.apk
+
+
 # OMX
 #lib/libstagefright_omx.so:product/vendor_overlay/30/lib/libstagefright_omx.so
 #lib/libstagefright_omx_utils.so:product/vendor_overlay/30/lib/libstagefright_omx_utils.so
