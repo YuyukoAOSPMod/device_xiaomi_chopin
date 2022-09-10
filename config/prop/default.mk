@@ -8,12 +8,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif
 
 # Bluetooth
+# ro.bluetooth.a2dp_offload.supported=false
+# ro.vendor.mtk.bt_bleaudio_enable=false 
+# vendor.audio.feature.a2dp_offload.enable=false
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.bluetooth.a2dp_offload.supported=false \
     persist.bluetooth.a2dp_offload.disabled=true \
-    persist.bluetooth.bluetooth_audio_hal.disabled=true \
-    ro.vendor.mtk.bt_bleaudio_enable=false \
-    vendor.audio.feature.a2dp_offload.enable=false
+    persist.bluetooth.bluetooth_audio_hal.disabled=true
+    
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
