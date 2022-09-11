@@ -23,7 +23,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/chopin/device.mk)
 
 # Inherit some common Pixel-Experience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/phone.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := chopin
