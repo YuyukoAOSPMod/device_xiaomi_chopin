@@ -152,14 +152,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.chopin
 
-# Location Provider
-ifeq ($(USE_CN_AGPS),true)
-PRODUCT_PACKAGES += \
-    AMapLocationProvider
-
+# Location
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/gps/gps_debug.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/gps_debug.conf
-endif
 
 # MtkInCallService
 PRODUCT_PACKAGES += \
