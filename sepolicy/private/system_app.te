@@ -1,0 +1,4 @@
+get_prop(system_app, system_mtk_rcs_single_reg_support_prop)
+set_prop(system_app, system_mtk_rcs_single_reg_support_prop)
+
+set_prop(system_app, system_mtk_cta_set_prop)

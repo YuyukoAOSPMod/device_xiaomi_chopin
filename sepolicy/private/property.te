@@ -1,2 +1,5 @@
 system_internal_prop(system_mtk_em_tel_log_prop)
 system_internal_prop(system_mtk_imsconfig_prop)
+system_public_prop(system_mtk_init_svc_emdlogger1_prop)
+system_internal_prop(system_mtk_rcs_single_reg_support_prop)
+system_internal_prop(system_mtk_cta_set_prop)

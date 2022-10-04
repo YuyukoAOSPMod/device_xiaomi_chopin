@@ -1,3 +1,6 @@
 (typeattributeset vtservice_31_0 (vtservice))
 (expandtypeattribute (vtservice_31_0) true)
 (typeattribute vtservice_31_0)
+(typeattributeset system_mtk_init_svc_emdlogger1_prop_31_0 (system_mtk_init_svc_emdlogger1_prop))
+(expandtypeattribute (system_mtk_init_svc_emdlogger1_prop_31_0) true)
+(typeattribute system_mtk_init_svc_emdlogger1_prop_31_0)
