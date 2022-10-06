@@ -9,6 +9,12 @@ ro.vendor.net.enable_dual_wifi=1
 # prop for cabc
 ro.vendor.cabc.enable=true
 
+# Blur
+ro.surface_flinger.supports_background_blur=1
+
+# Disable blur on app launch
+ro.launcher.blur.appLaunch=1
+
 # RIL
 # 5g capability(0: not support 1:nsa 2:sa 3: 1+2)
 ro.vendor.radio.5g=3
