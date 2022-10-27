@@ -20,7 +20,7 @@
         </receiver>
         <service
             android:directBootAware="true"
-            android:name="org.lineageos.mediatek.incallservice.PhoneStateChangeService">
+            android:name="org.lineageos.mediatek.incallservice.VolumeChangeService">
         </service>
     </application>
 </manifest>
