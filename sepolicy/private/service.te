@@ -2,3 +2,6 @@
 type mtk_radio_service, service_manager_type, app_api_service;
 type mtk_phonesubinfo_service, service_manager_type, app_api_service;
 type mtk_simphonebook_service, service_manager_type, app_api_service;
+
+# DuraSpeed
+type mtk_duraspeed_service, app_api_service, system_server_service, service_manager_type;
