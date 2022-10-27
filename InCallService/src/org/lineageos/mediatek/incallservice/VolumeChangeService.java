@@ -1,50 +1,42 @@
 package org.lineageos.mediatek.incallservice;
 
-import android.content.Intent;
-import android.content.Context;
-import android.content.BroadcastReceiver;
-
 import android.media.AudioManager;
-import android.media.AudioSystem;
-import android.media.AudioDeviceInfo;
+
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.Context;
+import android.app.Service;
+import android.os.IBinder;
 
 import android.util.Log;
 
-public class VolumeChangeReceiver extends BroadcastReceiver {
+public class VolumeChangeService extends Service {
     public static final String LOG_TAG = "MtkInCallService";
 
-    private AudioManager mAudioManager;
+    private Context mContext;
+    private VolumeChangeReceiver mVolumeChangeReceiver;
 
-    public VolumeChangeReceiver(Context context) {
-        mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
     }
 
     @Override
-    public void onReceive(Context context, Intent intent) {
-        int streamType = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_TYPE, -1);
-        if (streamType == AudioSystem.STREAM_VOICE_CALL) {
-            AudioDeviceInfo callDevice = mAudioManager.getCommunicationDevice();
-            if (callDevice.getInternalType() != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE) {
-                // Device is not the built in earpiece, we don't need to do anything.
-                return;
-            }
+    public void onDestroy() {
+        super.onDestroy();
+    }
 
-            // Start building parameters
-            String parameters = "volumeDevice=" + (callDevice.getId() - 1) + ";";
-            int volumeIndex = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_VALUE, -1);
-            if (volumeIndex < 0) {
-                Log.w(LOG_TAG, "Could not get volumeIndex!");
-                return;
-            }
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startid) {
+        mContext = this;
 
-            // Limit volumeIndex to a max of 7 since that's the size of
-            // MediaTek's gain table.
-            parameters += "volumeIndex=" + Math.min(7, volumeIndex) + ";";
-            parameters += "volumeStreamType=" + streamType;
+        AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
+        mVolumeChangeReceiver = new VolumeChangeReceiver(audioManager);
 
-            // Set gain parameters
-            Log.d(LOG_TAG, "Setting audio parameters: " + parameters);
-            AudioSystem.setParameters(parameters);
-        }
+        Log.i(LOG_TAG, "Service is starting...");
+
+        this.registerReceiver(mVolumeChangeReceiver,
+                               new IntentFilter(AudioManager.VOLUME_CHANGED_ACTION));
+        return START_STICKY;
     }
 }
