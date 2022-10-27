@@ -22,10 +22,6 @@ public class VolumeChangeReceiver extends BroadcastReceiver {
     private void handleVolumeStateChange(Intent intent) {
         if (intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_TYPE, -1) == AudioManager.STREAM_VOICE_CALL) {
             AudioDeviceInfo callDevice = mAudioManager.getCommunicationDevice();
-            if (callDevice.getType() != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE) {
-                // Device is not the built in earpiece, we don't need to do anything.
-                return;
-            }
 
             // Try to get volumeIndex
             int volumeIndex = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_VALUE, -1);
