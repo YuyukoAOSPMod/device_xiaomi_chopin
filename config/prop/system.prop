@@ -55,16 +55,8 @@ ro.sys.usb.bicr=no
 # USB Charge only function
 ro.sys.usb.charging.only=yes
 
-# audio
-ro.camera.sound.forced=0
-ro.audio.silent=0
-
 # Kernel
 ro.kernel.zio=38,108,105,16
-
-# Display
-ro.sf.lcd_density=440
-sys.displayfeature_hidl=true
 
 # performance
 ro.mtk_perf_simple_start_win=1
@@ -85,9 +77,6 @@ vendor.displayfeature.entry.enable=true
 
 #system property for HBM mode
 vendor.hbm.enable=true
-
-#system prop for dc backlight
-persist.vendor.dc_backlight.enable=false
 
 #property for display fps switch
 persist.vendor.power.dfps.level=0
