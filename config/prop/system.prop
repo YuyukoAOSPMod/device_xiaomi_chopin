@@ -3,6 +3,9 @@
 #
 # For special ro override property
 
+# Audio
+ro.config.vc_call_vol_steps=7
+
 #support dual wifi feature
 ro.vendor.net.enable_dual_wifi=1
 

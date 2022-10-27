@@ -13,7 +13,7 @@ public class OnLockedBootCompleteReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         Log.i(LOG_TAG, "onBoot");
 
-        Intent sIntent = new Intent(context, PhoneStateChangeService.class);
+        Intent sIntent = new Intent(context, VolumeChangeService.class);
         context.startService(sIntent);
     }
 }
