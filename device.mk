@@ -156,6 +156,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/gps/gps_debug.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/gps_debug.conf
 
+# MIUI Camera
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/permissions/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-miuicamera.xml \
+    $(LOCAL_PATH)/config/sysconfig/hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist.xml
+
 # MtkInCallService
 PRODUCT_PACKAGES += \
     MtkInCallService

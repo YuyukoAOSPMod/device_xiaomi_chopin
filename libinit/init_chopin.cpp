@@ -94,6 +94,11 @@ void load_chopinin() {
     property_override("ro.product.brand", "Redmi");
 }
 
+void load_chopin_miuicamera() {
+    property_override("ro.product.mod_device", "chopin_global");
+    property_override("ro.miui.notch", "1");
+}
+
 void vendor_load_properties() {
   std::string region = android::base::GetProperty("ro.boot.hwc", "");
   load_dalvik_properties();
