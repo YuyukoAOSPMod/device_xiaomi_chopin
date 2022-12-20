@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bluetooth Audio HAL Audio Policy Configuration file -->
+<module name="bluetooth" halVersion="2.0">
+    <mixPorts>
+        <!-- A2DP Audio Ports -->
+        <mixPort name="a2dp output" role="source"/>
+        <!-- Hearing AIDs Audio Ports -->
+        <mixPort name="hearing aid output" role="source">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="24000 16000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </mixPort>
+	    <!-- Le Audio Ports -->
+        <mixPort name="le audio output" role="source">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="48000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </mixPort>
+        <mixPort name="le audio input" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="16000"
+                     channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+        </mixPort>
+    </mixPorts>
+    <devicePorts>
+        <!-- Hearing AIDs Audio Ports -->
+        <devicePort tagName="BT Hearing Aid Out" type="AUDIO_DEVICE_OUT_HEARING_AID" role="sink"/>
+        <!-- Le Audio Ports -->
+        <devicePort tagName="BT Le Audio Out HS" type="AUDIO_DEVICE_OUT_BLE_HEADSET" role="sink"/>
+        <devicePort tagName="BT Le Audio Out SPK" type="AUDIO_DEVICE_OUT_BLE_SPEAKER" role="sink"/>
+        <devicePort tagName="BT Le Audio In COMMON" type="AUDIO_DEVICE_IN_BLUETOOTH_BLE" role="source"/>
+        <devicePort tagName="BT Le Audio In HS" type="AUDIO_DEVICE_IN_BLE_HEADSET" role="source"/>
+    </devicePorts>
+    <routes>
+        <route type="mix" sink="BT Hearing Aid Out"
+               sources="hearing aid output"/>
+        <route type="mix" sink="BT Le Audio Out HS"
+               sources="le audio output"/>
+        <route type="mix" sink="BT Le Audio Out SPK"
+               sources="le audio output"/>
+        <route type="mix" sink="le audio input"
+               sources="BT Le Audio In COMMON,BT Le Audio In HS"/>
+    </routes>
+</module>
