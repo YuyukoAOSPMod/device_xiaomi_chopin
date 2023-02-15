@@ -17,7 +17,14 @@
 #include "Power.h"
 #include "libpowerhal.h"
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
+
+#include <linux/input.h>
+
+constexpr char kWakeupEventNode[] = "/dev/input/event4";
+constexpr int kWakeupModeOff = 4;
+constexpr int kWakeupModeOn = 5;
 
 namespace aidl {
 namespace android {
@@ -57,6 +64,18 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
                    disable all hints to save power. */
                 libpowerhal_UserScnDisableAll();
             break;
+        }
+        case Mode::DOUBLE_TAP_TO_WAKE:
+        {
+            int fd = open(kWakeupEventNode, O_RDWR);
+            struct input_event ev = {
+                .type = EV_SYN,
+                .code = SYN_CONFIG,
+                .value = (enabled ? kWakeupModeOn : kWakeupModeOff),
+             };
+             write(fd, &ev, sizeof(ev));
+             close(fd);
+             break;
         }
         default:
             break;

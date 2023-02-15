@@ -21,6 +21,9 @@ cc_library_shared {
         "libpowerhal",
         "android.hardware.power-V1-ndk_platform",
     ],
+    header_libs: [
+        "generated_kernel_headers",
+    ],
     srcs: [
         "Power.cpp",
     ],
