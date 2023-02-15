@@ -22,7 +22,6 @@
 
 #include <linux/input.h>
 
-constexpr char kWakeupEventNode[] = "/dev/input/event4";
 constexpr int kWakeupModeOff = 4;
 constexpr int kWakeupModeOn = 5;
 
@@ -36,6 +35,39 @@ namespace mediatek {
 Power::Power() { libpowerhal_Init(1); }
 
 Power::~Power() { }
+
+static int open_ts_input() {
+    int fd = -1;
+    DIR *dir = opendir("/dev/input");
+
+    if (dir != NULL) {
+        struct dirent *ent;
+
+        while ((ent = readdir(dir)) != NULL) {
+            if (ent->d_type == DT_CHR) {
+                char absolute_path[PATH_MAX] = {0};
+                char name[80] = {0};
+
+                strcpy(absolute_path, "/dev/input/");
+                strcat(absolute_path, ent->d_name);
+
+                fd = open(absolute_path, O_RDWR);
+                if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
+                    if (strcmp(name, "fts_ts") == 0 ||
+                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
+                        break;
+                }
+
+                close(fd);
+                fd = -1;
+            }
+        }
+
+        closedir(dir);
+    }
+
+    return fd;
+}
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(VERBOSE) << "Power setMode: " << static_cast<int32_t>(type) << " to: " << enabled;
@@ -67,7 +99,10 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
         }
         case Mode::DOUBLE_TAP_TO_WAKE:
         {
-            int fd = open(kWakeupEventNode, O_RDWR);
+            int fd = open_ts_input();
+            if (fd == -1)
+                return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+
             struct input_event ev = {
                 .type = EV_SYN,
                 .code = SYN_CONFIG,
