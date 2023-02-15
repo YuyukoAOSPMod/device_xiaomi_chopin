@@ -22,15 +22,14 @@ import sys
 device='everpal'
 vendor='xiaomi'
 
-lines = [line for line in open('proprietary-files.txt', 'r')]
+with open('proprietary-files.txt', 'r') as f:
+    lines = f.read().splitlines()
 vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'
 needSHA1 = False
 
 
 def cleanup():
     for index, line in enumerate(lines):
-        # Remove '\n' character
-        line = line[:-1]
 
         # Skip empty or commented lines
         if len(line) == 0 or line[0] == '#':
@@ -39,13 +38,11 @@ def cleanup():
         # Drop SHA1 hash, if existing
         if '|' in line:
             line = line.split('|')[0]
-            lines[index] = '%s\n' % (line)
+            lines[index] = '%s' % (line)
 
 
 def update():
     for index, line in enumerate(lines):
-        # Remove '\n' character
-        line = line[:-1]
 
         # Skip empty lines
         if len(line) == 0:
@@ -68,7 +65,7 @@ def update():
                 file = open('%s/%s' % (vendorPath, filePath), 'rb').read()
 
             hash = sha1(file).hexdigest()
-            lines[index] = '%s|%s\n' % (line, hash)
+            lines[index] = '%s|%s' % (line, hash)
 
 
 if len(sys.argv) == 2 and sys.argv[1] == '-c':
@@ -77,7 +74,4 @@ else:
     update()
 
 with open('proprietary-files.txt', 'w') as file:
-    for line in lines:
-        file.write(line)
-
-    file.close()
+    file.write('\n'.join(lines) + '\n')
