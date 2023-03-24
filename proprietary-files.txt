@@ -15,6 +15,8 @@ lib/libem_wifi_jni.so
 lib64/libem_audio_jni.so
 lib64/libem_support_jni.so
 lib64/libem_wifi_jni.so
+system_ext/lib/libaudiotoolkit.so
+system_ext/lib64/libaudiotoolkit.so
 
 # MTK-IMS
 bin/vtservice
