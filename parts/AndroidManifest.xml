@@ -89,6 +89,17 @@
                 android:resource="@string/refresh_summary" />
         </activity>
 
+        <activity
+            android:name=".speaker.ClearSpeakerActivity" 
+            android:label="@string/clear_speaker_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+        </activity>
+
         <service
             android:name=".refreshrate.RefreshService"
             android:exported="true"

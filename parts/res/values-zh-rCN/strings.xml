@@ -82,4 +82,9 @@
     <string name="refresh_high">高 (90Hz)</string>
     <string name="refresh_extreme">极端 (120Hz)</string>
 
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">清理扬声器</string>
+    <string name="clear_speaker_summary">播放一段30秒的音频以清除扬声器内的杂物以及灰尘</string>
+    <string name="clear_speaker_description">如果您发现扬声器被灰尘轻微堵塞，请运行该功能一两次。该功能将会把媒体音量设置为最大。\n\n如果扬声器被严重堵塞，在扬声器朝下摇晃设备的同时，运行该功能2-5次。</string>
+
 </resources>
