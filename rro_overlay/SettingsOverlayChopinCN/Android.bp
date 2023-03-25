@@ -1,0 +1,7 @@
+runtime_resource_overlay {
+    name: "SettingsOverlayChopinCN",
+    theme: "SettingsOverlayChopinCN",
+    certificate: "platform",
+    sdk_version: "current",
+    product_specific: true
+}

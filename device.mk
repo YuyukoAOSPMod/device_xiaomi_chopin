@@ -177,7 +177,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlayChopin \
     WifiResOverlayChopin \
-    SystemUIOverlayChopin
+    SystemUIOverlayChopin \
+    SettingsOverlayChopinGlobal \
+    SettingsOverlayChopinCN
 
 # Power Perf
 PRODUCT_COPY_FILES += \
