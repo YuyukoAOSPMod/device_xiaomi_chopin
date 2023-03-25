@@ -125,9 +125,9 @@
         <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
     </scenario>
     <scenario powerhint="INTERACTION">
-        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1=" 1075000"></data>
-        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1=" 1162000"></data>
-        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_2" param1=" 1108000"></data>
+        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1075000"></data>
+        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="1162000"></data>
+        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_2" param1="1108000"></data>
         <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="3000000"></data>
