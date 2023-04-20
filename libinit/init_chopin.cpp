@@ -1,7 +1,7 @@
 /*
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
    Copyright (C) 2016 The CyanogenMod Project.
-   Copyright (C) 2019-2020 The LineageOS Project.
+   Copyright (C) 2019 The LineageOS Project.
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -27,29 +27,30 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <stdlib.h>
 #include <fstream>
+#include <string.h>
+#include <sys/sysinfo.h>
 #include <unistd.h>
-#include <vector>
-
-#include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
-#include <sys/sysinfo.h>
 
+#include <android-base/properties.h>
 #include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
+using android::base::SetProperty;
+using std::string;
 
-void property_override(char const prop[], char const value[], bool add = true) {
-    prop_info *pi;
+void property_override(string prop, string value)
+{
+    auto pi = (prop_info *)__system_property_find(prop.c_str());
 
-    pi = (prop_info *)__system_property_find(prop);
-    if (pi) {
-        __system_property_update(pi, value, strlen(value));
-    } else if (add) {
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-    }
+    if (pi != nullptr)
+        __system_property_update(pi, value.c_str(), value.size());
+    else
+        __system_property_add(prop.c_str(), prop.size(), value.c_str(), value.size());
 }
 
 void load_dalvik_properties() {
@@ -74,35 +75,50 @@ void load_dalvik_properties() {
     property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void load_chopin() {
-    property_override("ro.product.model", "M2104K10AC");
-    property_override("ro.product.marketname", "Redmi Note 10 Pro");
-    property_override("ro.product.brand", "Redmi");
-}
+void vendor_load_properties()
+{
+    load_dalvik_properties();
 
-void load_choping() {
-    property_override("ro.product.model", "21061110AG");
-    property_override("ro.product.marketname", "POCO X3 GT");
-    property_override("ro.product.brand", "POCO");
-}
+    string brand = "Redmi";
+    string model;
+    string marketname;
 
-void load_chopinin() {
-    property_override("ro.product.model", "21041110AI");
-    property_override("ro.product.marketname", "Redmi Note 10 Pro");
-    property_override("ro.build.product", "chopinin");
-    property_override("ro.product.device", "chopinin");
-    property_override("ro.product.brand", "Redmi");
-}
+    string region = GetProperty("ro.boot.hwc", "");
+    string board = GetProperty("ro.boot.product.hardware.sku", "");
+    string name = board;
 
-void vendor_load_properties() {
-  std::string region = android::base::GetProperty("ro.boot.hwc", "");
-  load_dalvik_properties();
-  property_override("ro.oem_unlock_supported", "0");
-  if (region.find("CN") != std::string::npos) {
-        load_chopin();
-    } else if (region.find("India") != std::string::npos) {
-        load_chopinin();
-    } else if (region.find("Global") != std::string::npos) {
-        load_choping();
+    property_override("ro.product.board", board);
+    property_override("ro.product.device", board);
+    property_override("ro.product.vendor.device", board);
+
+    property_override("ro.oem_unlock_supported", "0");
+
+    if (board == "chopin") {
+        if (region == "CN"){
+            model = "M2104K10AC";
+            marketname = "Redmi Note 10 Pro";
+        } else {
+            brand = "POCO";
+            model = "21061110AG";
+            marketname = "POCO X3 GT";
+            name = "chopin_global";
+        }
+    } else if (board == "choping") {
+        brand = "POCO";
+        model = "21061110AG";
+        marketname = "POCO X3 GT";
+        name = "chopin_global";
+    } else if (board == "chopinin") {
+        model = "21041110AI";
+        marketname = "Redmi Note 10 Pro";
+    }
+
+    // Override all partitions' props
+    string prop_partitions[] = {"", "odm.", "vendor."};
+    for (const string &prop : prop_partitions) {
+        property_override(string("ro.product.") + prop + string("brand"), brand);
+        property_override(string("ro.product.") + prop + string("model"), model);
+        property_override(string("ro.product.") + prop + string("marketname"), marketname);
+        property_override(string("ro.product.") + prop + string("name"), name);
     }
 }
