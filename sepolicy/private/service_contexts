@@ -6,6 +6,9 @@ smartratswitch              u:object_r:mtk_radio_service:s0
 iphonesubinfoEx                                         u:object_r:mtk_phonesubinfo_service:s0
 mtksimphonebook                                         u:object_r:mtk_simphonebook_service:s0
 
+# DuraSpeed
+duraspeed                               u:object_r:mtk_duraspeed_service:s0
+
 # Radio
 imsa                        u:object_r:radio_service:s0
 mtkIms                      u:object_r:radio_service:s0
