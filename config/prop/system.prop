@@ -35,21 +35,31 @@ ro.vendor.net.enable_sla=1
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # VRR configs
-ro.surface_flinger.set_touch_timer_ms=3000
-ro.surface_flinger.set_idle_timer_ms=3000
-ro.surface_flinger.set_display_power_timer_ms=1200
+ro.surface_flinger.set_touch_timer_ms=1000
+ro.surface_flinger.set_idle_timer_ms=1000
+ro.surface_flinger.set_display_power_timer_ms=1100
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
-debug.sf.use_phase_offsets_as_durations=1
-debug.sf.late.sf.duration=27600000
-debug.sf.late.app.duration=20000000
-debug.sf.early.sf.duration=27600000
-debug.sf.early.app.duration=20000000
-debug.sf.earlyGl.sf.duration=27600000
-debug.sf.earlyGl.app.duration=20000000
+debug.sf.disable_backpressure=1
+debug.sf.enable_hwc_vds=0
+debug.sf.early.app.duration=24000000
+debug.sf.early.sf.duration=30000000
+debug.sf.earlyGl.app.duration=24000000
+debug.sf.earlyGl.sf.duration=30000000
 debug.sf.hwc.min.duration=23000000
-debug.sf.latch_unsignaled=true
-debug.sf.predict_hwc_composition_strategy=0
-debug.sf.enable_transaction_tracing=false
+debug.sf.late.app.duration=24000000
+debug.sf.late.sf.duration=30000000
+debug.sf.high_fps.early.app.duration=10000000
+debug.sf.high_fps.early.sf.duration=13800000
+debug.sf.high_fps.earlyGl.app.duration=10000000
+debug.sf.high_fps.earlyGl.sf.duration=13800000
+debug.sf.high_fps.hwc.min.duration=8500000
+debug.sf.high_fps.late.app.duration=10000000
+debug.sf.high_fps.late.sf.duration=13800000
+debug.sf.latch_unsignaled=1
+debug.renderengine.backend=skiaglthreaded
+vendor.display.idle_time=0
+vendor.display.idle_time_inactive=0
+vendor.display.disable_metadata_dynamic_fps=1
 
 # WiFi
 wifi.interface=wlan0
