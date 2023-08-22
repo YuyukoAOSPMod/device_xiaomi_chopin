@@ -1,0 +1,10 @@
+lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+lib/libgpudataproducer.so
+lib64/arm.graphics-V1-ndk_platform.so
+lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
+lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+lib64/libDR.so
+lib64/libgpudataproducer.so
+lib64/libmnl.so
+lib64/libmtk_drvb.so

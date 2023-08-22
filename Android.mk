@@ -16,10 +16,9 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),chopin)
-subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
-$(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
-endif
+ifneq ($(filter chopin choping,$(TARGET_DEVICE)),)
+
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
@@ -29,3 +28,13 @@ $(LIGHT_REPLACEMENT): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -s /system/bin/hw/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(LIGHT_REPLACEMENT)
+
+
+CHOPIN_SYMLINK := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(LOCAL_PATH)/symlink/mt6891_chopin.txt)))
+$(CHOPIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf mt6893/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(CHOPIN_SYMLINK)
+
+endif
