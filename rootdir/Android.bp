@@ -1,0 +1,196 @@
+//
+// Copyright (C) 2023 The ArrowOS Project
+// Copyright (C) 2023 The PixelExperience Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "init.insmod.sh",
+    src: "bin/init.insmod.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "factory_init.rc",
+    src: "etc/factory_init.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init_connectivity.rc",
+    src: "etc/init_connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "factory_init.project.rc",
+    src: "etc/factory_init.project.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "factory_init.connectivity.rc",
+    src: "etc/factory_init.connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.project.rc",
+    src: "etc/meta_init.project.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "multi_init.rc",
+    src: "etc/multi_init.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "factory_init.connectivity.common.rc",
+    src: "etc/factory_init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.rc",
+    src: "etc/meta_init.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.common.rc",
+    src: "etc/init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.modem.rc",
+    src: "etc/init.modem.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6893.usb.rc",
+    src: "etc/init.mt6893.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.project.rc",
+    src: "etc/init.project.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.aee.rc",
+    src: "etc/init.aee.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.ago.rc",
+    src: "etc/init.ago.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.connectivity.rc",
+    src: "etc/meta_init.connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.sensor_2_0.rc",
+    src: "etc/init.sensor_2_0.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.modem.rc",
+    src: "etc/meta_init.modem.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.rc",
+    src: "etc/init.connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "meta_init.connectivity.common.rc",
+    src: "etc/meta_init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6893.rc",
+    src: "etc/init.mt6893.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.emmc",
+    src: "etc/fstab.emmc",
+    vendor: true,
+}
+prebuilt_etc {
+    name: "fstab.enableswap",
+    src: "etc/fstab.enableswap",
+    vendor: true,
+}
+prebuilt_etc {
+    name: "fstab.mt6893",
+    src: "etc/fstab.mt6893",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.mt6891.rc",
+    src: "etc/init.recovery.mt6891.rc",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.mt6893.rc",
+    src: "etc/init.recovery.mt6893.rc",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.usb.rc",
+    src: "etc/init.recovery.usb.rc",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6891.custom.rc",
+    src: "etc/init.mt6891.custom.rc",
+    sub_dir: "init",
+    system: true,
+}

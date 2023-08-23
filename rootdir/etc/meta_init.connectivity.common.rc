@@ -1,0 +1,80 @@
+#INTERNAL_START
+on post-fs-data
+#
+# Connectivity related modules and character device nodes (Begin)
+#
+
+#/dev/ttyMT2 for Connectivity BT/FM/GPS usage
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+# GPS
+    mkdir /data/vendor/gps 0770 gps system
+    mkdir /data/vendor/log 0770 gps system
+    mkdir /data/vendor/log/gps 0770 gps system
+
+# GPS EMI
+    chmod 666 /dev/gps_emi
+
+# WiFi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wpa_supplicant 0770 wifi wifi
+
+#
+# Connectivity related device nodes & configuration (end)
+#
+
+
+on boot
+
+#
+# Connectivity related services (Begin)
+#
+
+# GPS
+service mnld /vendor/bin/mnld 1Hz=y meta log_ctrl
+    class main
+    user gps
+    group gps inet misc sdcard_rw sdcard_r media_rw system radio wakelock
+    socket mnld stream 660 gps system
+
+#service BGW /vendor/bin/BGW
+#    user system
+#    group gps system radio
+#    class main
+
+#
+# Connectivity related services (End)
+#
+
+#
+# Connectivity related kernel objects (Begin)
+#
+
+# load connfem driver
+on boot
+    insmod /vendor/lib/modules/connfem.ko
+
+# load bt_drv
+on property:vendor.connsys.driver.ready=yes
+    insmod /vendor/lib/modules/bt_drv_${ro.vendor.bt.platform}.ko
+
+# load wifi chrdev driver and wlan driver after wmt_loader finish
+on property:vendor.connsys.driver.ready=yes
+    insmod /vendor/lib/modules/${ro.vendor.wlan.chrdev}.ko
+    insmod /vendor/lib/modules/wlan_drv_${ro.vendor.wlan.gen}.ko
+
+# load fmradio_drv
+on property:vendor.connsys.driver.ready=yes
+    insmod /vendor/lib/modules/fmradio_drv_${ro.vendor.fm.platform}.ko
+
+# load gps_drv
+on property:vendor.connsys.driver.ready=yes
+  insmod /vendor/lib/modules/${ro.vendor.gps.chrdev}.ko
+
+#
+# Connectivity related kernel objects (End)
+#
+
+#INTERNAL_END

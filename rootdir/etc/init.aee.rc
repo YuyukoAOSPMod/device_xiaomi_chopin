@@ -1,0 +1,29 @@
+on post-fs-data
+
+    mkdir /data/vendor/aee_exp 0775 root root
+    mkdir /data/vendor/dumpsys 0775 system system
+    mkdir /data/vendor/core 0775 system system
+    mkdir /data/vendor/tombstones 0775 system system
+
+on post-fs && property:ro.vendor.aee.convert64=0
+    start aee_aedv
+    start aee_aedv64
+
+on post-fs && property:ro.vendor.aee.convert64=1
+    start aee_aedv64_v2
+
+on property:ro.vendor.aeev.dynamic.switch=disable && property:ro.vendor.aee.convert64=0
+    stop aee_aedv
+    stop aee_aedv64
+
+on property:ro.vendor.aeev.dynamic.switch=disable && property:ro.vendor.aee.convert64=1
+    stop aee_aedv64_v2
+
+on property:sys.boot_completed=1
+    setprop persist.vendor.aeev.log.status 1
+
+on property:persist.vendor.aeev.boot.reason.status=done && property:ro.vendor.aee.convert64=0
+    start aeev_set_last_shutdown
+
+on property:persist.vendor.aeev.boot.reason.status=done && property:ro.vendor.aee.convert64=1
+    start aeev_set_last_shutdown_v2

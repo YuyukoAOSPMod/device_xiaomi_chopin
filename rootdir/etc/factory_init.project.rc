@@ -1,0 +1,51 @@
+mkdir /data/misc/sensors 0664 system system
+
+service msensord /system/bin/msensord
+    user system
+    group system
+    oneshot
+
+service akmd8963 /system/bin/akmd8963
+    disabled
+    user system
+    group system
+
+
+on post-fs
+    # disable HPS
+    write /proc/hps/enabled 0
+
+    # disable secondary cpu
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+    write /sys/devices/system/cpu/cpu8/online 0
+    write /sys/devices/system/cpu/cpu9/online 0
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+on boot
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    oneshot
+
+on property:sys.usb.config=gs1gs3
+      write /sys/class/android_usb/android0/enable 0
+      write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
+      write /sys/class/android_usb/android0/idProduct 2029
+      write /sys/class/android_usb/android0/f_acm/port_index 2,4
+      write /sys/devices/platform/mt_usb/saving 1
+      write /sys/class/android_usb/android0/functions mass_storage,adb,acm
+      write /sys/class/android_usb/android0/enable 1
+      start adbd
+      setprop sys.usb.state ${sys.usb.config}
+      setprop sys.usb.acm_idx 2,4
+

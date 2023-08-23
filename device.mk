@@ -49,11 +49,6 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Audio
-#PRODUCT_COPY_FILES += \
-#    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/a2dp_audio_policy_configuration.xml \
-#    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/a2dp_in_audio_policy_configuration.xml \
-#    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/bluetooth_audio_policy_configuration.xml
-
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/audio/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/)
 
@@ -187,10 +182,39 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    factory_init.connectivity.common.rc \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc
+
+PRODUCT_PACKAGES += \
+    init.aee.rc \
+    init.ago.rc \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init.modem.rc \
     init.recovery.mt6891.rc \
     init.recovery.mt6893.rc \
     init.recovery.usb.rc \
-    init.mt6891.rc
+    init.mt6891.custom.rc \
+    init.mt6893.rc \
+    init.mt6893.usb.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    init_conninfra.rc
+
+PRODUCT_PACKAGES += \
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc
+
+PRODUCT_PACKAGES += \
+    multi_init.rc
+
+PRODUCT_PACKAGES += \
+    init.insmod.sh
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi

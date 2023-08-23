@@ -1,0 +1,48 @@
+# MTK conninfra .rc configure
+
+on post-fs-data
+    mkdir /data/vendor/connsyslog 0755 system system
+    mkdir /data/vendor/connsyslog/bt 0775 system system
+    mkdir /data/vendor/connsyslog/wifi 0775 system system
+
+on boot
+
+# conninfra
+service conninfra_loader /vendor/bin/conninfra_loader
+    class core
+    user system
+    group system
+    oneshot
+
+on property:ro.build.type=eng
+    write /sys/kernel/debug/tracing/tracing_on 1
+
+on property:persist.vendor.connsys.coredump.mode=1 && property:vendor.connsys.driver.ready=yes
+    start bt_dump
+    start wifi_dump
+
+on property:persist.vendor.connsys.coredump.mode=2 && property:vendor.connsys.driver.ready=yes
+    start bt_dump
+    start wifi_dump
+
+on property:persist.vendor.connsys.coredump.mode=0
+    stop bt_dump
+    stop wifi_dump
+
+on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
+    write /proc/driver/conninfra_dbg "0x13 ${persist.vendor.connsys.coredump.mode}"
+
+on property:persist.vendor.em.dy.debug=1
+    setprop persist.vendor.connsys.coredump.mode 0
+
+service bt_dump /vendor/bin/bt_dump
+    user system
+    group system sdcard_rw misc
+    class core
+    disabled
+
+service wifi_dump /vendor/bin/wifi_dump
+    user system
+    group system sdcard_rw misc
+    class core
+    disabled

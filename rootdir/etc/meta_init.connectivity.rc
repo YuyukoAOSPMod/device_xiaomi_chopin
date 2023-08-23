@@ -1,0 +1,34 @@
+import /vendor/etc/init/hw/meta_init.connectivity.common.rc
+
+#INTERNAL_START
+
+on boot
+
+#
+# Connectivity related services (Begin)
+#
+
+# conninfra
+service conninfra_loader /vendor/bin/conninfra_loader
+    class core
+    user system
+    group system
+    oneshot
+
+#
+# Connectivity related services (End)
+#
+
+#
+# Connectivity related kernel objects (Begin)
+#
+
+# load conninfra driver
+on boot
+    insmod /vendor/lib/modules/conninfra.ko
+
+#
+# Connectivity related kernel objects (End)
+#
+
+#INTERNAL_END

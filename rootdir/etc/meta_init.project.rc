@@ -1,0 +1,28 @@
+#INTERNAL_START
+on post-fs
+
+    # disable HPS
+    write /proc/hps/enabled 0
+
+    # disable secondary cpu
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+    write /sys/devices/system/cpu/cpu8/online 0
+    write /sys/devices/system/cpu/cpu9/online 0
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+on boot
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    oneshot
+#INTERNAL_END
