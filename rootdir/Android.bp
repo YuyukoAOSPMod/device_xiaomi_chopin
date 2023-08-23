@@ -153,6 +153,14 @@ prebuilt_etc {
     vendor: true,
 }
 
+// Ueventd
+prebuilt_etc {
+    name: "ueventd.mt6893.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.mt6893.rc",
+    vendor: true,
+}
+
 // fstab
 prebuilt_etc {
     name: "fstab.emmc",
