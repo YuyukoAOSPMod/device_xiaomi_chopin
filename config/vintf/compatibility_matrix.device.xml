@@ -608,6 +608,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.microtrust.hardware.soter</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISoter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.microtrust.hardware.thh</name>
         <version>2.0</version>
         <interface>
