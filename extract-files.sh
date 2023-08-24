@@ -91,7 +91,10 @@ function blob_fixup() {
             ;&
         vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
             "$PATCHELF" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
-            ;;    
+            ;;
+        vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
     esac
 }
 
