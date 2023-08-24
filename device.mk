@@ -327,6 +327,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.insmod.sh
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.3.vendor:64 \
+    android.hardware.radio@1.1.vendor \
+    android.hardware.radio@1.6.vendor:64 \
+    android.hardware.secure_element@1.2.vendor
+
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
