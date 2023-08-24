@@ -95,6 +95,9 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
+        vendor/bin/hw/camerahalserver)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
     esac
 }
 
