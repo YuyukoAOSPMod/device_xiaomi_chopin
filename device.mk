@@ -119,6 +119,11 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor
+
 # GCamGo Prebuilts
 PRODUCT_PACKAGES += \
     GCamGoPrebuilts
