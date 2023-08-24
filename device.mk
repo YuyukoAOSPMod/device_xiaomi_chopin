@@ -172,8 +172,12 @@ PRODUCT_PACKAGES += \
 # Fstab in ramdisk
 PRODUCT_PACKAGES += \
     fstab.mt6893 \
-    fstab.emmc \
-    fstab.ramdisk
+    fstab.enableswap \
+    fstab.emmc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:recovery/root/first_stage_ramdisk/fstab.emmc \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6893:recovery/root/first_stage_ramdisk/fstab.mt6893
 
 # F2FS
 PRODUCT_PACKAGES += \
