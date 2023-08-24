@@ -415,14 +415,13 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    hostapd \
     wpa_supplicant
 
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor:64 \
     android.hardware.tetheroffload.control@1.1.vendor:64 \
-    android.hardware.wifi@1.5.vendor:64 \
-    android.hardware.wifi.hostapd@1.3.vendor:64 \
-    android.hardware.wifi.supplicant@1.4.vendor:64
+    android.hardware.wifi@1.5.vendor:64
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi/)
