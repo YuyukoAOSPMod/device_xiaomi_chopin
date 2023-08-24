@@ -343,6 +343,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# SoundTrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.0 \
+    android.hardware.soundtrigger@2.1 \
+    android.hardware.soundtrigger@2.2 \
+    android.hardware.soundtrigger@2.3-impl
+
 # Properties
 include $(LOCAL_PATH)/config/prop/default.mk
 
