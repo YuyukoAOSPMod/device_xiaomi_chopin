@@ -64,6 +64,9 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml)
             sed -i "s/vibratorfeature/default/g" "${2}"
             ;;
+        vendor/lib64/libwifi-hal-mtk.so)
+            "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
+            ;;    
     esac
 }
 
