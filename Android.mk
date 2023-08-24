@@ -37,4 +37,18 @@ $(CHOPIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CHOPIN_SYMLINK)
 
+VENDOR_GATEKEEPER_SYMLINKS := \
+    $(TARGET_OUT_VENDOR)/lib/hw \
+    $(TARGET_OUT_VENDOR)/lib64/hw
+
+$(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	$(hide) echo "Making vendor gatekeeper symlinks"
+	@mkdir -p $(TARGET_OUT_VENDOR)/lib/hw
+	@mkdir -p $(TARGET_OUT_VENDOR)/lib64/hw
+	@ln -sf libSoftGatekeeper.so $(TARGET_OUT_VENDOR)/lib/hw/gatekeeper.default.so
+	@ln -sf libSoftGatekeeper.so $(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.default.so
+	$(hide) touch $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(VENDOR_GATEKEEPER_SYMLINKS)
+
 endif

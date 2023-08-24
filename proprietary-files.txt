@@ -32,8 +32,14 @@ vendor/lib/libaudio_param_parser-vnd.so
 # Audio (Hardware)
 vendor/lib/hw/audio.primary.mt6893.so
 vendor/lib/hw/audio.r_submix.mt6893.so
+vendor/lib/hw/audio_policy.stub.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib/vendor.mediatek.hardware.audio@7.1.so
+vendor/lib64/hw/audio.primary.mt6893.so
+vendor/lib64/hw/audio.r_submix.mt6893.so
+vendor/lib64/hw/audio_policy.stub.so
+vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
+vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
 # Audio (Configs)
 vendor/etc/audio_param/AudioParamOptions.xml
