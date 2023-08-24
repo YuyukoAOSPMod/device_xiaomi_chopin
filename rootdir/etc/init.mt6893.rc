@@ -258,6 +258,9 @@ on post-fs-data
     chmod 0771 /mnt/vendor/nvdata
     mkdir /mnt/vendor/nvdata/media 0771 media audio
 
+    # AudioDump
+    mkdir /data/vendor/audiohal
+
     #Create cct mount point
     mkdir /mnt/vendor/cct
     chown root system /mnt/vendor/cct
