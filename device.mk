@@ -368,6 +368,11 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2 \
     android.hardware.soundtrigger@2.3-impl
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@2.0.vendor
+
 # Properties
 include $(LOCAL_PATH)/config/prop/default.mk
 
