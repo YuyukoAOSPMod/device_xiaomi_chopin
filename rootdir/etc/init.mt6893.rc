@@ -1124,13 +1124,6 @@ on property:persist.vendor.mediatek.fg.log.enable=1
     write /sys/devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-gauge/FG_daemon_log_level 7
     write /proc/sys/kernel/printk 8
 
-# add loghidl client
-service loghidlsysservice /system/bin/loghidlsysservice
-    class main
-    user root
-    group system
-    disabled
-
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
     class core
@@ -1148,12 +1141,6 @@ service factory_no_image /vendor/bin/factory
     socket factory-atci stream 660 radio system
     disabled
     oneshot
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset

@@ -622,16 +622,6 @@ service connsyslogger /system/bin/connsyslogger
     user shell
     group system shell radio sdcard_rw inet sdcard_r media_rw bluetooth gps wifi
 
-service loghidlvendorservice /vendor/bin/loghidlvendorservice
-    class main
-    user shell
-    group system shell radio
-
-service loghidlsysservice /system/bin/loghidlsysservice
-    class main
-    user shell
-    group system shell radio
-
 service meta_tst /vendor/bin/meta_tst
     user root
     group radio system wifi audio bluetooth media gps
