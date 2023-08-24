@@ -47,8 +47,6 @@ vendor/lib64/libbwc.so
 vendor/lib64/libladder.so
 
 # Audio (Hardware)
-vendor/bin/hw/android.hardware.audio.service.mediatek
-vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/lib/hw/audio.primary.mt6893.so
 vendor/lib/hw/audio.r_submix.mt6893.so
 vendor/lib/hw/audio_policy.stub.so
