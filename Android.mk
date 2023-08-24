@@ -22,14 +22,6 @@ include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-LIGHT_REPLACEMENT += $(TARGET_OUT_PRODUCT)/vendor_overlay/${PRODUCT_TARGET_VNDK_VERSION}/bin/hw/android.hardware.lights-service.mediatek
-$(LIGHT_REPLACEMENT): $(LOCAL_INSTALLED_MODULE)
-	@mkdir -p $(dir $@)
-	$(hide) ln -s /system/bin/hw/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(LIGHT_REPLACEMENT)
-
-
 CHOPIN_SYMLINK := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(LOCAL_PATH)/symlink/mt6891_chopin.txt)))
 $(CHOPIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(dir $@)
