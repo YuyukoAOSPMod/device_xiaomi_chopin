@@ -269,6 +269,9 @@ PRODUCT_PACKAGES += \
     MtkInCallService
 
 # Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.2.vendor
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/media/,$(TARGET_COPY_OUT_VENDOR)/etc/)
 
