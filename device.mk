@@ -362,7 +362,7 @@ PRODUCT_PACKAGES += \
 
 # Power Perf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/power/powerscntbl.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/powerscntbl.xml
+    $(LOCAL_PATH)/config/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
