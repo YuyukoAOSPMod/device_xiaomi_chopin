@@ -145,6 +145,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     DT2W-Service-MT6891
 
+# Dumpstate
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1.vendor:64
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
