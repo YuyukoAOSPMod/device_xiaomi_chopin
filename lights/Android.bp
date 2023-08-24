@@ -15,6 +15,7 @@
 cc_binary {
     name: "android.hardware.lights-service.mediatek",
     init_rc: ["android.hardware.lights-service.mediatek.rc"],
+    vintf_fragments: ["android.hardware.light-service.xiaomi_mt6893.xml"],
     relative_install_path: "hw",
     shared_libs: [
         "libbase",
