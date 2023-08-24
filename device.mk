@@ -250,6 +250,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/seccomp_policy/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/)
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
