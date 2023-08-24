@@ -714,8 +714,4 @@
         </interface>
         <fqname>@1.0::IVSIMService/default</fqname>
     </hal>
-    <sepolicy>
-        <version>31.0</version>
-    </sepolicy>
-    <kernel target-level="5"/>
 </manifest>
