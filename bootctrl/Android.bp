@@ -26,7 +26,7 @@ cc_library_shared {
     recovery_available: true,
     srcs: ["BootControl.cpp", "boot_region_control.cpp"],
 
-    header_libs: ["device_kernel_headers"],
+    header_libs: ["generated_kernel_headers"],
 
     shared_libs: [
         "liblog",
