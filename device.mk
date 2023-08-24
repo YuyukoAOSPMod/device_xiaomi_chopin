@@ -121,6 +121,10 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     libhidltransport
 
+# Haptics
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/excluded-input-devices.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/excluded-input-devices.xml
+
 # IMS
 PRODUCT_BOOT_JARS += \
     mediatek-common \
