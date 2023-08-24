@@ -246,6 +246,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+# Seccomp Policy
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/seccomp_policy/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

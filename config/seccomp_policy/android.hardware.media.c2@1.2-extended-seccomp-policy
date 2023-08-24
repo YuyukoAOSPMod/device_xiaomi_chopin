@@ -1,0 +1,41 @@
+connect: 1
+fcntl64: 1
+socket: 1
+writev: 1
+clock_nanosleep: 1
+eventfd2: 1
+sched_getparam: 1
+sched_getscheduler :1
+setsockopt: 1
+bind: 1
+listen: 1
+
+# Add more for 32bits process, from android.hardware.media.c2@1.1-default-arm.policy
+mmap2: arg2 in ~PROT_EXEC || arg2 in ~PROT_WRITE
+ftruncate64: 1
+getuid32: 1
+open: 1
+fstat64: 1
+readlink: 1
+fstatfs64: 1
+_llseek: 1
+fstatat64: 1
+ugetrlimit: 1
+# crash dump policy additions
+sigreturn: 1
+futex: 1
+#mmap2: arg2 in 0x1|0x2
+geteuid32: 1
+getgid32: 1
+getegid32: 1
+getgroups32: 1
+getpriority: 1
+mlock: 1
+munlock: 1
+fchmod: 1
+getuid: 1
+mmap: 1
+getrlimit: 1
+newfstatat: 1
+fstat: 1
+fstatfs: 1
