@@ -4,11 +4,11 @@
 # This is a common source of Android security bugs.
 #
 import /system_ext/etc/init/hw/vendor_init_as_system.rc
-import ${ro.vendor.rc}factory_init.connectivity.rc
-import ${ro.vendor.rc}factory_init.thp.rc
+import /vendor/etc/init/hw/factory_init.connectivity.rc
+import /vendor/etc/init/hw/factory_init.thp.rc
 import /init.environ.rc
 import /vendor/etc/init/trustonic.rc
-import ${ro.vendor.rc}init.nvdata.rc
+import /vendor/etc/init/hw/init.nvdata.rc
 import /vendor/etc/init/microtrust.rc
 import /vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
 import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
@@ -38,7 +38,7 @@ import /system/etc/init/servicemanager.rc
 import /system/etc/init/hwservicemanager.rc
 import /system/etc/init/android.hidl.allocator@1.0-service.rc
 
-import ${ro.vendor.rc}multi_init.rc
+import /vendor/etc/init/hw/multi_init.rc
 
 on early-init
     # Set init and its forked children's oom_adj.

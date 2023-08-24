@@ -105,7 +105,6 @@ ro.apex.updatable=true
 ####################################
 # from variable PRODUCT_DEFAULT_PROPERTY_OVERRIDES
 ####################################
-ro.vendor.rc=/vendor/etc/init/hw/
 ro.oem_unlock_supported=1
 ro.surface_flinger.protected_contents=true
 ro.vendor.init.sensor.rc=init.sensor_2_0.rc

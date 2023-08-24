@@ -8,7 +8,7 @@ import /init.environ.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /system_ext/etc/init/hw/init.aee.rc
 import /vendor/etc/init/trustonic.rc
-import ${ro.vendor.rc}meta_init.connectivity.rc
+import /vendor/etc/init/hw/meta_init.connectivity.rc
 import /vendor/etc/init/hw/meta_init.project.rc
 import /vendor/etc/init/microtrust.rc
 import /vendor/etc/init/android.hardware.boot@1.2-service.rc
@@ -29,10 +29,10 @@ import /system/etc/init/servicemanager.rc
 import /system/etc/init/hwservicemanager.rc
 import /system/etc/init/android.hidl.allocator@1.0-service.rc
 
-import ${ro.vendor.rc}multi_init.rc
+import /vendor/etc/init/hw/multi_init.rc
 
 #Make sure meta_init.modem.rc is the last rc file.
-import ${ro.vendor.rc}meta_init.modem.rc
+import /vendor/etc/init/hw/meta_init.modem.rc
 
 
 on early-init
