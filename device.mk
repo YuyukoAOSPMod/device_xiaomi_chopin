@@ -270,7 +270,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2.vendor
+    android.hardware.media.c2@1.2.vendor \
+    libavservices_minijail.vendor \
+    libavservices_minijail_vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/config/media/,$(TARGET_COPY_OUT_VENDOR)/etc/)
