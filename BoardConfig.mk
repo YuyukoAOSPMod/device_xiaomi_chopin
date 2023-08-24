@@ -41,12 +41,10 @@ AB_OTA_PARTITIONS += \
     system \
     system_ext \
     odm \
-    odm_dlkm \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
-    vendor \
-    vendor_dlkm \
+    vendor
 
 # Assertation
 TARGET_OTA_ASSERT_DEVICE := chopin,choping
@@ -149,17 +147,15 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
 # Partitions Option
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 TARGET_COPY_OUT_ODM := odm
-TARGET_COPY_OUT_ODM_DLKM := odm_dlkm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Partitions (Dynamic)
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_MAIN_SIZE := 9122611200 # 9126805504/2 - 4194304
-BOARD_MAIN_PARTITION_LIST := system_ext product vendor system odm vendor_dlkm odm_dlkm
+BOARD_MAIN_PARTITION_LIST := system_ext product vendor system odm
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := main
 
