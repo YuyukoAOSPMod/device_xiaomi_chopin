@@ -175,6 +175,11 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
