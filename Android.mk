@@ -22,14 +22,14 @@ include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-CHOPIN_SYMLINK := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(LOCAL_PATH)/symlink/mt6891_chopin.txt)))
+CHOPIN_SYMLINK := $(addprefix $(TARGET_OUT_VENDOR)/, $(strip $(shell cat $(DEVICE_PATH)/symlink/mt6891_chopin.txt)))
 $(CHOPIN_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@mkdir -p $(dir $@)
 	$(hide) ln -sf $(TARGET_BOARD_PLATFORM)/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CHOPIN_SYMLINK)
 
-VENDOR_GATEKEEPER_SYMLINKS := \
+VENDOR_SYMLINKS := \
     $(TARGET_OUT_VENDOR)/lib/hw \
     $(TARGET_OUT_VENDOR)/lib64/hw
 
