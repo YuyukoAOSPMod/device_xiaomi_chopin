@@ -1469,6 +1469,22 @@ vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
+# Kernel-Modules
+vendor/lib/modules/bt_drv_6893.ko
+vendor/lib/modules/connfem.ko
+vendor/lib/modules/conninfra.ko
+vendor/lib/modules/fmradio_drv_connac2x.ko
+vendor/lib/modules/fpsgo.ko
+vendor/lib/modules/gps_drv.ko
+vendor/lib/modules/met.ko
+vendor/lib/modules/modules.alias
+vendor/lib/modules/modules.dep
+vendor/lib/modules/modules.load
+vendor/lib/modules/modules.softdep
+vendor/lib/modules/sla.ko
+vendor/lib/modules/wlan_drv_gen4m.ko
+vendor/lib/modules/wmt_chrdev_wifi.ko
+
 # Listen
 vendor/lib/hw/sound_trigger.primary.default.so
 vendor/lib64/hw/sound_trigger.primary.default.so
