@@ -107,7 +107,6 @@ ro.apex.updatable=true
 ####################################
 ro.oem_unlock_supported=1
 ro.surface_flinger.protected_contents=true
-ro.vendor.init.sensor.rc=init.sensor_2_0.rc
 camera.disable_zsl_mode=1
 ro.logd.kernel=false
 ro.hardware.hwcomposer=mtk_common
