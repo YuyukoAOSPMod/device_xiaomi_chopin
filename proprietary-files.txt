@@ -1,5 +1,8 @@
 # All blobs from missi_phoneext4_cn-user 13 TP1A.220624.014 V14.0.7.0.TKPCNXM release-keys, unless pinned
 
+# ADSP modules
+vendor/lib/rfsa/adsp/libSuperSensor_skel.so
+
 # AAL
 vendor/lib/libaal_cust.so
 vendor/lib/libaal_key.so
@@ -16,20 +19,36 @@ etc/fiveG-apns-conf.xml
 etc/xcap-apns-conf.xml
 
 # Audio
-vendor/lib/libaudioclient_aidl_conversion.so
-vendor/lib/libaudiocompensationfilterc.so
+vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
-vendor/lib/libaudiocomponentenginec.so
+vendor/lib/libaudiocompensationfilterc.so
 vendor/lib/libaudiocomponentengine_vendor.so
+vendor/lib/libaudiocomponentenginec.so
 vendor/lib/libaudiocustparam_vendor.so
 vendor/lib/libaudiodcrflt_vendor.so
 vendor/lib/libaudiofmtconv.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
-vendor/lib/libaudio_param_parser-vnd.so
+vendor/lib/libbwc.so
+vendor/lib/libladder.so
+vendor/lib64/libaudio_param_parser-vnd.so
+vendor/lib64/libaudiocompensationfilter_vendor.so
+vendor/lib64/libaudiocompensationfilterc.so
+vendor/lib64/libaudiocomponentengine_vendor.so
+vendor/lib64/libaudiocomponentenginec.so
+vendor/lib64/libaudiocustparam_vendor.so
+vendor/lib64/libaudiodcrflt_vendor.so
+vendor/lib64/libaudiofmtconv.so
+vendor/lib64/libaudioloudc.so
+vendor/lib64/libaudioprimarydevicehalifclient.so
+vendor/lib64/libaudiotoolkit_vendor.so
+vendor/lib64/libbwc.so
+vendor/lib64/libladder.so
 
 # Audio (Hardware)
+vendor/bin/hw/android.hardware.audio.service.mediatek
+vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/lib/hw/audio.primary.mt6893.so
 vendor/lib/hw/audio.r_submix.mt6893.so
 vendor/lib/hw/audio_policy.stub.so
@@ -2344,7 +2363,6 @@ vendor/lib/libaurisysdemo.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
-vendor/lib/libbwc.so
 vendor/lib/libcapctrl.so
 vendor/lib/libcares_naptr.so
 vendor/lib/libcarrierconfig.so
@@ -2402,7 +2420,6 @@ vendor/lib/libipsec_ims_shr.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libJpgEncPipe.so
-vendor/lib/libladder.so
 vendor/lib/liblogwrap_vendor.so
 vendor/lib/libminiui.so
 vendor/lib/libmml.so
