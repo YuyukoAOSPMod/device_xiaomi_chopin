@@ -227,6 +227,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
     $(LOCAL_PATH)/config/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-goodix.idc
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor:64 \
+    libkeymaster4.vendor:64 \
+    libkeymaster41.vendor:64 \
+    libkeymaster4support.vendor:64 \
+    libkeymaster_messages.vendor:64 \
+    libkeymaster_portable.vendor:64 \
+    libkeystore-engine-wifi-hidl:64 \
+    libkeystore-wifi-hidl
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.mediatek
