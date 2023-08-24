@@ -1,0 +1,40 @@
+libOpenCL.so
+libneuron_platform.so 64
+libion_mtk.so
+libvpu.so
+libapusys.so
+libmpbase.so
+libmialgoengine.so 64
+libarcsoft_beautyshot.so 64
+libarcsoft_dualcam_refocus.so
+libarcsoft_portrait_lighting.so 64
+libarcsoft_portrait_lighting_c.so 64
+libarcsoft_high_dynamic_range.so
+libarcsoft_low_light_hdr.so
+libarcsoft_hdr_detection.so 64
+libarcsoft_supernight.so 64
+libarcsoft_distortion_correction.so 64
+libalCFR.so 64
+libmibokeh_mt6873.so
+libalhLDC.so 64
+libneuron_runtime.so 64
+android.hidl.allocator@1.0.so 64
+vendor.mediatek.hardware.apuware.apusys@1.0.so 64
+vendor.mediatek.hardware.apuware.utils@1.0.so
+vendor.mediatek.hardware.apuware.xrp@1.0.so 64
+libSuperSensor.so 64
+libSuperSensorCPU.so 64
+libSuperSensorProcessor.so 64
+libbeauty_face_interface.so 64
+libmiai_portraitsupernight.so 64
+libarcsoft_sn_mtk_apu.so 64
+libarcsoft_super_night_raw.so 64
+libxmi_high_dynamic_range.so 64
+libmialgoengine2.so 64
+libcom.xiaomi.pluginutils.so
+libmialgo_utils.so 64
+libmialgo_ie_capture.so 64
+librelight_only.so 64
+libsdk_sr.so 64
+lib_sr_models.so 64
+libneuron_adapter.so 64
