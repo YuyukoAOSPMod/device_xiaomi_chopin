@@ -98,6 +98,9 @@ function blob_fixup() {
         vendor/bin/hw/camerahalserver)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
+        vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
+            echo "$(cat ${2}) input" > "${2}"
+            ;;
     esac
 }
 
