@@ -368,7 +368,6 @@ PRODUCT_PACKAGES += \
     factory_init.rc
 
 PRODUCT_PACKAGES += \
-    init.aee.rc \
     init.ago.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \

@@ -5,8 +5,6 @@
 #
 import /system_ext/etc/init/hw/vendor_init_as_system.rc
 import /init.environ.rc
-import /vendor/etc/init/hw/init.aee.rc
-import /system_ext/etc/init/hw/init.aee.rc
 import /vendor/etc/init/trustonic.rc
 import /vendor/etc/init/hw/meta_init.connectivity.rc
 import /vendor/etc/init/hw/meta_init.project.rc

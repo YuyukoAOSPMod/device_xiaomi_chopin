@@ -91,13 +91,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.aee.rc",
-    src: "etc/init.aee.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.ago.rc",
     src: "etc/init.ago.rc",
     sub_dir: "init/hw",

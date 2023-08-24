@@ -191,6 +191,6 @@ ro.mediatek.version.build.branch=
 persist.vendor.vzw_device_type=0
 persist.vendor.wfc.sys_wfc_support=1
 ro.vendor.customer_logpath=/data
-ro.vendor.have_aee_feature=1
+ro.vendor.have_aee_feature=0
 ro.audio.usb.period_us=16000
 persist.sys.fuse.passthrough.enable=true
