@@ -2443,6 +2443,7 @@ vendor/lib/libmp4enc_sa.ca7.so
 vendor/lib/libmp4enc_xa.ca7.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmt_mitee.so
+vendor/lib/libmtk_bsg.so
 vendor/lib/libmtcloader.so
 vendor/lib/libnotifyaudiohal.so
 vendor/lib/libnvram.so
@@ -2666,6 +2667,7 @@ vendor/lib64/libmt_isee.so
 vendor/lib64/libmt_isee@1.2.so
 vendor/lib64/libmt_mitee.so
 vendor/lib64/libmt_mitee@1.2.so
+vendor/lib64/libmtk_bsg.so
 vendor/lib64/libmtcloader.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
