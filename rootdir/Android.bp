@@ -21,13 +21,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init_connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "factory_init.project.rc",
     src: "etc/factory_init.project.rc",
     sub_dir: "init/hw",
@@ -200,5 +193,4 @@ prebuilt_etc {
     name: "init.mt6891.custom.rc",
     src: "etc/init.mt6891.custom.rc",
     sub_dir: "init",
-    system: true,
 }
