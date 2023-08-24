@@ -128,6 +128,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
 
+# ConsumerIr
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-service \
+    android.hardware.ir@1.0-impl
+
 # GCamGo Prebuilts
 PRODUCT_PACKAGES += \
     GCamGoPrebuilts
