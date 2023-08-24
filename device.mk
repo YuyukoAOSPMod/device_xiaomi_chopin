@@ -257,6 +257,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.mediatek
 
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0.vendor:64
+
 # Location
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/gps/gps_debug.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps_debug.conf
