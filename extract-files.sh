@@ -72,6 +72,9 @@ function blob_fixup() {
             ;&
         vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
+        vendor/bin/mtk_agpsd)
+            "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v32.so" "${2}"
             ;;    
     esac
 }
