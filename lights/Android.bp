@@ -26,4 +26,5 @@ cc_binary {
         "Lights.cpp",
         "main.cpp",
     ],
+    vendor: true,
 } 
