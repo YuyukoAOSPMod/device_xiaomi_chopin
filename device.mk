@@ -460,6 +460,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3.vendor \
     android.hardware.usb.gadget@1.1.vendor
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libutils-v32
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service-lazy.chopin \
