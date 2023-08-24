@@ -279,6 +279,10 @@ PRODUCT_PACKAGES += \
     SettingsOverlayChopinGlobal \
     SettingsOverlayChopinCN
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2.vendor:64
+
 # Power Perf
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/power/powerscntbl.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/powerscntbl.xml
