@@ -16,7 +16,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/vintf/manifest
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
-LOCAL_PATH := hardware/interfaces/wifi/1.5/default
+LOCAL_PATH := hardware/interfaces/wifi/1.6/default
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := android.hardware.wifi@1.0-service-lazy.chopin
@@ -49,7 +49,8 @@ LOCAL_SHARED_LIBRARIES := \
     android.hardware.wifi@1.2 \
     android.hardware.wifi@1.3 \
     android.hardware.wifi@1.4 \
-    android.hardware.wifi@1.5
+    android.hardware.wifi@1.5 \
+    android.hardware.wifi@1.6
 
 LOCAL_STATIC_LIBRARIES := android.hardware.wifi@1.0-service-lib
 

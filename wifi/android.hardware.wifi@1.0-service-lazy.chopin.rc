@@ -5,6 +5,7 @@ service vendor.wifi_hal_legacy /vendor/bin/hw/android.hardware.wifi@1.0-service-
     interface android.hardware.wifi@1.3::IWifi default
     interface android.hardware.wifi@1.4::IWifi default
     interface android.hardware.wifi@1.5::IWifi default
+    interface android.hardware.wifi@1.6::IWifi default
     oneshot
     disabled
     class hal
