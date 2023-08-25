@@ -14,6 +14,19 @@ ro.launcher.blur.appLaunch=1
 # Brand
 Build.BRAND=MTK
 
+# Dalvik
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.ab-ota=speed-profile
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.boot-dex2oat-threads=6
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
+
 # Display
 ro.sf.lcd_density=440
 sys.displayfeature_hidl=true
