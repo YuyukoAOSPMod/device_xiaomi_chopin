@@ -112,6 +112,9 @@ persist.dbg.wfc_avail_ovr=1
 # Kernel
 ro.kernel.zio=38,108,105,16
 
+# Keylayout
+qemu.hw.mainkeys=0
+
 # Memory
 ro.config.per_app_memcg=false
 
