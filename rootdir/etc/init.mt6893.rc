@@ -259,7 +259,8 @@ on post-fs-data
     mkdir /mnt/vendor/nvdata/media 0771 media audio
 
     # AudioDump
-    mkdir /data/vendor/audiohal
+    mkdir /data/vendor/audiohal 0771 system audio
+    mkdir /data/vendor/audiohal/audio_param 0771 system audio
 
     #Create cct mount point
     mkdir /mnt/vendor/cct
