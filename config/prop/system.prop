@@ -27,6 +27,9 @@ dalvik.vm.boot-dex2oat-threads=6
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
 dalvik.vm.image-dex2oat-threads=6
 
+# Dex2oat64
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 ro.sf.lcd_density=440
 sys.displayfeature_hidl=true
