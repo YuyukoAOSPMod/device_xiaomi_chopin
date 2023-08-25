@@ -149,11 +149,6 @@ prebuilt_etc {
 
 // fstab
 prebuilt_etc {
-    name: "fstab.emmc",
-    src: "etc/fstab.emmc",
-    vendor: true,
-}
-prebuilt_etc {
     name: "fstab.enableswap",
     src: "etc/fstab.enableswap",
     vendor: true,
