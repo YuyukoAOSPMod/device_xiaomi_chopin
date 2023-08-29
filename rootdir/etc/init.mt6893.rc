@@ -1166,6 +1166,14 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
+# Offline Charging daemon
+service vendor.charger /system/bin/chargeonlymode
+    class charger
+    user system
+    group system graphics input
+    capabilities SYS_BOOT
+    seclabel u:r:charger:s0
+
 service charger /system/bin/charger
     class charger
     critical
