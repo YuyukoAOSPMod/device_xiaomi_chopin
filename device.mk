@@ -368,7 +368,9 @@ PRODUCT_PACKAGES += \
 
 # Power Perf
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
+    $(LOCAL_PATH)/config/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
+    $(LOCAL_PATH)/config/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
+    $(LOCAL_PATH)/config/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
