@@ -25,6 +25,7 @@
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_2" param1="3000000"></data>
+        <data cmd="PERF_RES_SCHED_BOOST_VALUE_ROOT" param1="15"></data>
         <data cmd="PERF_RES_CPUCORE_PERF_MODE" param1="1"></data>
         <data cmd="PERF_RES_DRAM_OPP_MIN" param1="1"></data>
         <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="100"></data>
