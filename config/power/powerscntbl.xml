@@ -125,7 +125,7 @@
     <scenario powerhint="MTKPOWER_HINT_MULTI_DISPLAY_WITH_GPU_FPS_120">
         <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
     </scenario>
-    <scenario powerhint="INTERACTION">
+    <scenario powerhint="MTKPOWER_HINT_UX_SCROLLING">
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1075000"></data>
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="1162000"></data>
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_2" param1="1108000"></data>
@@ -133,6 +133,14 @@
         <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="3000000"></data>
         <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="40"></data>
+    </scenario>
+    <scenario powerhint="INTERACTION">
+        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+        <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+        <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+        <data cmd="PERF_RES_CPUFREQ_CCI_FREQ" param1="1"></data>
+        <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
         <data cmd="PERF_RES_POWERHAL_TOUCH_BOOST_NOTIFY_TOUCH_EVENT" param1="1"></data>
     </scenario>
 </SCNTABLE>
